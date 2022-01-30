@@ -1,0 +1,26 @@
+<body>
+    <h1>Valor soma</h1>
+    <p id="soma"></p>
+
+    <h1>Valor mult</h1>
+    <p id="mult"></p>
+
+</body>
+
+<script>
+    function show(num) {
+        console.log("valor: "+ num);
+    }
+    function som(a, b) {return a + b}
+    function somCallback(a, b, callback) {callback(a + b) }
+
+    function mult(a, b) {return a*b}
+    function multCb(a, b, cb) {var op = a*b; cb(op)}
+
+    document.getElementById('soma').innerText = somCallback(1,3)
+    document.getElementById('mult').innerText = multCb(2,3)
+
+    console.log(somCallback(1,3, show));
+    console.log(multCb(2,3, show));
+    
+</script>
