@@ -2,33 +2,41 @@
 
 // set timeout
 
-function timeout(params) {
-    console.log("before ********");
 
-    setTimeout(function (params) {
-        console.log("****** 1s");
-    }, 1000)
+function timeoutClear(params) {
+    var x = 0
 
-    setTimeout(function (params) {
-        console.log("****** 2s");
-    }, 2000)
+    var myTempo = setTimeout(function (params) {
+        console.log("x == 0");
+    }, 3000)
 
-    console.log("alfer ********");
+    x = 2
+
+    if(x > 0){
+        clearTimeout(myTempo)
+        console.log("x is not 0");
+    }
 }
 
 
 // set interval
 
-function interval(params) { // loop
-    setInterval(() => {
-        console.log("*****5s interval");
-    }, 5000);
+function intervalClear(params) { // loop
+
+    var myTempo = setInterval(() => {
+        console.log("*/*/*/**/");
+    }, 500);
+
+    setTimeout(() => {
+        console.log("not necessary");
+        clearInterval(myTempo)
+    }, 1500);
 }
 
 
 // exec
 
-timeout()
+//timeoutClear()
 
-interval()
+intervalClear()
 
